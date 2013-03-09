@@ -11,3 +11,56 @@
  *= require_self
  *= require_tree .
  */
+
+body {
+  background-image:url('/assets/office_medium.jpg');
+  margin: 0px;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1, h2 {
+  background-color:rgba(255,255,255, .9);
+  margin-left: 0px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  float: left;
+  padding-left: 20px;
+  font-size: 50px;
+  font-weight: normal;
+}
+
+.login {
+  float: right;
+  font-size: small;
+}
+
+.profilecontainer {
+  position:absolute;
+  width:100%;
+}
+
+.profile {
+  background-color:rgba(255,255,255, .9);
+  margin-left: 0px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  float: left;
+  padding: 20px;
+  width: 85%
+}
+
+.profiledata {
+  float: left;
+  padding: 20px;
+  font-size: 25px;
+}
+
+.profilesynopsis {
+  width: 600px;
+}
+
+.logo {
+  float: right;
+  background-color:rgba(255,255,255, .95);
+  padding: 20px;
+}

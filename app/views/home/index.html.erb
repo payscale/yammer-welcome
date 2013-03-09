@@ -1,61 +1,4 @@
 
-<style>
-
-body {
-  background-image:url('/assets/office_medium.jpg');
-  margin: 0px;
-  font-family: 'Roboto', sans-serif;
-}
-
-h1, h2 {
-  background-color:rgba(255,255,255, .9);
-  margin-left: 0px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  float: left;
-  padding-left: 20px;
-  font-size: 50px;
-  font-weight: normal;
-}
-
-.login {
-  float: right;
-  font-size: small;
-}
-
-.profilecontainer {
-  position:absolute;
-  width: 80%;
-}
-
-.profile {
-  background-color:rgba(255,255,255, .9);
-  margin-left: 0px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  float: left;
-  padding: 20px;
-  width: 80%;
-}
-
-.profiledata {
-  float: left;
-  padding: 20px;
-  font-size: 25px;
-}
-
-.profilesynopsis {
-  width: 600px;
-}
-
-.logo {
-  float: right;
-  background-color:rgba(255,255,255, .95);
-  padding: 20px;
-}
-
-</style>
-
 <div class="login">
   <% if current_user %>
     Logged in as: <%= current_user.name %>.
@@ -95,9 +38,6 @@ h1, h2 {
   </div>
 
   <div style="clear:both"></div>
-  <div style="clear:both"></div>
-
-  <div class="logo"><img src="/assets/ps_logo_tag_150.png" /></div>
 
 <script type="text/javascript">
 $('#profilelist .profilecontainer:gt(0)').hide(); // hide all but first element
