@@ -1,34 +1,59 @@
 
 <style>
-h1 {
-  vertical-align: middle;
-}
+
 body {
-  background-color: #eee;
-  font-size: 25px;
+  background-image:url('/assets/office_medium.jpg');
+  margin: 0px;
+  font-family: 'Roboto', sans-serif;
 }
+
+h1, h2 {
+  background-color:rgba(255,255,255, .9);
+  margin-left: 0px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  float: left;
+  padding-left: 20px;
+  font-size: 50px;
+  font-weight: normal;
+}
+
 .login {
   float: right;
   font-size: small;
 }
-.profile{
-    position:absolute;
-    background:#eee;
-    padding:25px;
-  width:1200px;
+
+.profilecontainer {
+  position:absolute;
+  width: 80%;
 }
+
+.profile {
+  background-color:rgba(255,255,255, .9);
+  margin-left: 0px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  float: left;
+  padding: 20px;
+  width: 80%;
+}
+
 .profiledata {
   float: left;
-  width: 750px;
-  list-style-type: none;
+  padding: 20px;
+  font-size: 25px;
 }
-.imageli {
-  list-style-type: none;
-  float: left;
+
+.profilesynopsis {
+  width: 600px;
 }
-.bigtext {
-  font-size:50px;
+
+.logo {
+  float: right;
+  background-color:rgba(255,255,255, .95);
+  padding: 20px;
 }
+
 </style>
 
 <div class="login">
@@ -40,28 +65,47 @@ body {
   <% end %>
 </div>
 
-<h1>Welcome to <img src="http://p1.pscdn.me/images/ps_logo_tag_150.png" /></h1>
+
+<h1>Welcome to PayScale!</h1>
+
+  <div style="clear:both"></div>
+
   <div class="profilelist">
   <% @profiles.each do |profile| %>
+
+  <div class="profilecontainer">
+  
+    <h2>Meet <span style="color:red"><%= profile["full_name"] %></span>, <%= profile["job_title"] %></h2>
+  
+    <div style="clear:both"></div>
+
     <div class="profile">
-      <div class="imageli"><img src="<%= profile["mugshot_url_template"].gsub("{width}","400").gsub("{height}","400") %>" /></div>
-      <ul class="profiledata">
-        <li class="bigtext"><%= profile["full_name"] %></li>
-        <li><%= profile["job_title"] %> on <%= profile["department"] %><br />&nbsp;</li>
-        <li>Interests: <%= profile["interests"] %></li>
-        <li>About me:<br /><%= profile["summary"] %></li>
-      </ul>
+      <div class="profiledata">
+        <img src="<%= profile["mugshot_url_template"].gsub("{width}","200").gsub("{height}","200") %>" />
+      </div>
+    
+      <div class="profiledata profilesynopsis">
+        <%= profile["summary"] || "I haven't figured out how to update my bio yet!" %>
+        <br /><br />Interests: <%= profile["interests"] || "I have interests, I just haven't put them on Yammer yet!" %>
+      </div>
     </div>
+  </div>
+
   <% end %>
   </div>
 
+  <div style="clear:both"></div>
+  <div style="clear:both"></div>
+
+  <div class="logo"><img src="/assets/ps_logo_tag_150.png" /></div>
+
 <script type="text/javascript">
-$('#profilelist .profile:gt(0)').hide(); // hide all but first element
+$('#profilelist .profilecontainer:gt(0)').hide(); // hide all but first element
 
 var i=0, t, stop=false;
 
 function animate(){
-   $('.profile').eq(i%$('.profile').length).fadeTo(500,1).siblings('.profile').fadeTo(500,0);
+   $('.profilecontainer').eq(i%$('.profilecontainer').length).fadeTo(500,1).siblings('.profilecontainer').fadeTo(500,0);
 }
 
 function autoAnimate(){
