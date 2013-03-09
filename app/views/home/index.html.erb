@@ -46,7 +46,7 @@ body {
     <div class="profile">
       <div class="imageli"><img src="<%= profile["mugshot_url_template"].gsub("{width}","400").gsub("{height}","400") %>" /></div>
       <ul class="profiledata">
-        <li class="bigtext">Meet <%= profile["full_name"] %></li>
+        <li class="bigtext"><%= profile["full_name"] %></li>
         <li><%= profile["job_title"] %> on <%= profile["department"] %><br />&nbsp;</li>
         <li>Interests: <%= profile["interests"] %></li>
         <li>About me:<br /><%= profile["summary"] %></li>
