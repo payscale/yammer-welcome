@@ -1,0 +1,72 @@
+
+<style>
+h1 {
+  vertical-align: middle;
+}
+body {
+  background-color: #eee;
+  font-size: 25px;
+}
+.login {
+  float: right;
+  font-size: small;
+}
+.profile{
+    position:absolute;
+    background:#eee;
+    padding:25px;
+  width:1200px;
+}
+.profiledata {
+  float: left;
+  width: 750px;
+  list-style-type: none;
+}
+.imageli {
+  list-style-type: none;
+  float: left;
+}
+.bigtext {
+  font-size:50px;
+}
+</style>
+
+<div class="login">
+  <% if current_user %>
+    Logged in as: <%= current_user.name %>.
+    <%= link_to "Sign out.", signout_path %>
+  <% else %>
+   <%= link_to "Sign in with Yammer!", "/auth/yammer" %>
+  <% end %>
+</div>
+
+<h1>Welcome to <img src="http://p1.pscdn.me/images/ps_logo_tag_150.png" /></h1>
+  <div class="profilelist">
+  <% @profiles.each do |profile| %>
+    <div class="profile">
+      <div class="imageli"><img src="<%= profile["mugshot_url_template"].gsub("{width}","400").gsub("{height}","400") %>" /></div>
+      <ul class="profiledata">
+        <li class="bigtext">Meet <%= profile["full_name"] %></li>
+        <li><%= profile["job_title"] %> on <%= profile["department"] %><br />&nbsp;</li>
+        <li>Interests: <%= profile["interests"] %></li>
+        <li>About me:<br /><%= profile["summary"] %></li>
+      </ul>
+    </div>
+  <% end %>
+  </div>
+
+<script type="text/javascript">
+$('#profilelist .profile:gt(0)').hide(); // hide all but first element
+
+var i=0, t, stop=false;
+
+function animate(){
+   $('.profile').eq(i%$('.profile').length).fadeTo(500,1).siblings('.profile').fadeTo(500,0);
+}
+
+function autoAnimate(){
+   clearTimeout(t);    
+   t = setTimeout(function(){i++;animate();autoAnimate();},5000);
+}
+autoAnimate();
+</script>
