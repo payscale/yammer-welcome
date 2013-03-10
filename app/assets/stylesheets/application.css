@@ -36,7 +36,7 @@ h1, h2 {
 
 .profilecontainer {
   position:absolute;
-  width:100%;
+  width:95%;
 }
 
 .profile {
@@ -46,17 +46,22 @@ h1, h2 {
   margin-bottom: 10px;
   float: left;
   padding: 20px;
-  width: 85%
+  width: 100%
 }
 
 .profiledata {
   float: left;
-  padding: 20px;
+  padding: .5%;
   font-size: 25px;
 }
 
 .profilesynopsis {
-  width: 600px;
+  width: 70%;
+}
+
+.mugshot {
+  overflow: hidden;
+  width:24%;
 }
 
 .logo {

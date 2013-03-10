@@ -19,6 +19,9 @@ class HomeController < ApplicationController
       end
       
     end
+    
+    # removing people who don't want to be here
+    @profile.delete_if { |profile| profile["interests"].downcase.include? 'not the welcome screen' }
 
     respond_to do |format|
       format.html
