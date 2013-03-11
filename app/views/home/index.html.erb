@@ -14,9 +14,28 @@
   <div style="clear:both"></div>
 
   <div class="profilelist">
+  
+  <div class="profilecontainer">
+  	<h2>Meet the Team</h2>
+  	<div style="clear:both"></div>
+  	<div class="profile">
+  	  <div class="profiledata" style="font-size: 25px;">
+  	    You've found the PayScale Welcome Screen.
+  	    <p>Hang out here for a minute, and meet our team. In just a few seconds we'll
+  	    scroll through the team. We hope you enjoy meeting us, and
+  	    hope you enjoy your visit to our fair little office. Please feel free ask any
+  	    questions, and we'll be happy to answer!</p>
+  	    <p style="font-size: 15px">Are you an employee?<br />This information is pulled from Yammer. Update your
+  	    information there. If you want to be removed from this screen, put "Not the 
+  	    welcome screen" in the interests sections of your profile.</p	>
+  	  </div>
+  	</div>
+  </div>
+  
+  
   <% @profiles.each do |profile| %>
 
-  <div class="profilecontainer">
+  <div class="profilecontainer" style="display:none">
   
     <h2>Meet <span style="color:red"><%= profile["full_name"] %></span>, <%= profile["job_title"] %></h2>
   
@@ -50,7 +69,7 @@ function animate(){
 
 function autoAnimate(){
    clearTimeout(t);    
-   t = setTimeout(function(){i++;animate();autoAnimate();},5000);
+   t = setTimeout(function(){i++;animate();autoAnimate();},8000);
 }
 autoAnimate();
 </script>
