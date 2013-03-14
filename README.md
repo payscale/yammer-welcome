@@ -5,7 +5,7 @@ of our office. After running through a few ideas, we decided that a "meet the te
 was a project we felt like we could finish in a day, and would be a great addition to the
 lobby.
 
-![Screenshot](http://www.payscale.com/cms-images/default-source/default-album/yammer-welcome-screen.png?size=609)
+![Screenshot](http://www.payscale.com/cms-images/default-source/default-album/yammer-welcome-screen.png?size=800)
 
 Installation
 -------------
