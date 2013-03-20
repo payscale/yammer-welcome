@@ -5,6 +5,7 @@ class HomeController < ApplicationController
   def index
 
     @profiles = [];
+    @company_name = ""
 
     if current_user
       yam ||= Yam.new(current_user.token,'https://www.yammer.com/api/v1/')
@@ -17,6 +18,7 @@ class HomeController < ApplicationController
         results = yam.get("/users", page: page)
         page = page+1
       end
+      @company_name = current_user.company
       
     end
     
