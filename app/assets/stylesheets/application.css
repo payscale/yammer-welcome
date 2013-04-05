@@ -16,6 +16,7 @@ body {
   background-image:url('/assets/office_medium.jpg');
   margin: 0px;
   font-family: 'Roboto', sans-serif;
+  overflow: hidden;
 }
 
 h1, h2 {
@@ -25,7 +26,7 @@ h1, h2 {
   margin-bottom: 10px;
   float: left;
   padding-left: 20px;
-  font-size: 50px;
+  font-size: 25px;
   font-weight: normal;
 }
 
@@ -36,7 +37,7 @@ h1, h2 {
 
 .profilecontainer {
   position:absolute;
-  width:95%;
+  width:85%;
 }
 
 .profile {
@@ -52,16 +53,16 @@ h1, h2 {
 .profiledata {
   float: left;
   padding: .5%;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .profilesynopsis {
-  width: 70%;
+  width: 59%;
 }
 
 .mugshot {
   overflow: hidden;
-  width:24%;
+  width:210px;
 }
 
 .logo {
