@@ -17,3 +17,4 @@
 # Ignore the aerofs stuff
 /.aerofs
 set_env.sh
+nohup.out
