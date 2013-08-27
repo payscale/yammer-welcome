@@ -1,6 +1,4 @@
 class HomeController < ApplicationController
-  require 'csv'
-  require 'net/http'
   require 'yammer'
   
   def index
