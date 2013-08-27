@@ -35,18 +35,18 @@
 
   <div class="profilecontainer" style="display:none">
   
-    <h2>Meet <span style="color:red"><%= profile["full_name"] %></span>, <%= profile["job_title"] %></h2>
+    <h2>Meet <span style="color:red"><%= profile[:full_name] %></span>, <%= profile[:job_title] %></h2>
   
     <div style="clear:both"></div>
 
     <div class="profile">
       <div class="profiledata mugshot">
-        <img src="<%= profile["mugshot_url_template"].gsub("{width}","200").gsub("{height}","200") %>" />
+        <img src="<%= profile[:mugshot_url_template].gsub("{width}","200").gsub("{height}","200") %>" />
       </div>
     
       <div class="profiledata profilesynopsis">
-        <%= profile["summary"] || "I haven't figured out how to update my bio yet!" %>
-        <br /><br />Interests: <%= profile["interests"] || "I have interests, I just haven't put them on Yammer yet!" %>
+        <%= profile[:summary] || "I haven't figured out how to update my bio yet!" %>
+        <br /><br />Interests: <%= profile[:interests] || "I have interests, I just haven't put them on Yammer yet!" %>
       </div>
     </div>
   </div>

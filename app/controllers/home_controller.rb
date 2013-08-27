@@ -1,21 +1,21 @@
 class HomeController < ApplicationController
   require 'csv'
   require 'net/http'
-
+  require 'yammer'
+  
   def index
 
     @profiles = [];
     @company_name = ""
 
     if current_user
-      yam ||= Yam.new(current_user.token,'https://www.yammer.com/api/v1/')
-     
-      results = yam.get("/users") 
+      yam ||= Yammer::Client.new(:access_token  => current_user.token)
+      results = yam.get("/api/v1/users") 
       page = 1
-      until results.length < 1 do
-        print results.length
-        results.each{ |result| @profiles << result }
-        results = yam.get("/users", page: page)
+      until results.body.length < 1 do
+        print results.body.length
+        results.body.each{ |result| @profiles << result }
+        results = yam.get("/api/v1/users", page: page)
         page = page+1
       end
       @company_name = current_user.company
